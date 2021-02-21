@@ -1,4 +1,4 @@
-# TFE
+# BuildingScanner
 
 ## Links
  1. [Specifications](https://www.overleaf.com/project/5fa54bf5ad9b43046b1aaeff)
