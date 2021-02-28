@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -665,28 +665,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 133b3bfe60baacd45a72714ffc6eb29a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: -1
-  useLegacySteamVRInput: 0
   deviceToTrack: 0
   latencyCompensation: 78
   correctControllerDrift: 1
   SNHolder: 
   zedManager: {fileID: 1344833222}
-  fireBinding:
-    actionPath: /actions/zed-default/in/Fire
-    needsReinit: 0
-  clickBinding:
-    actionPath: /actions/zed-default/in/Click
-    needsReinit: 0
-  backBinding:
-    actionPath: /actions/zed-default/in/Back
-    needsReinit: 0
-  grabBinding:
-    actionPath: /actions/zed-default/in/Grab
-    needsReinit: 0
-  navigateUIBinding:
-    actionPath: /actions/zed-default/in/NavigateUI
-    needsReinit: 0
   onFireDown:
     m_PersistentCalls:
       m_Calls: []
@@ -719,6 +702,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4937924797587290, guid: d0ab09dfdb72e614aadbc6e474b9bc3e, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937924797587290, guid: d0ab09dfdb72e614aadbc6e474b9bc3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -731,6 +718,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4937924797587290, guid: d0ab09dfdb72e614aadbc6e474b9bc3e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937924797587290, guid: d0ab09dfdb72e614aadbc6e474b9bc3e, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -741,14 +732,6 @@ PrefabInstance:
     - target: {fileID: 4937924797587290, guid: d0ab09dfdb72e614aadbc6e474b9bc3e, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4937924797587290, guid: d0ab09dfdb72e614aadbc6e474b9bc3e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4937924797587290, guid: d0ab09dfdb72e614aadbc6e474b9bc3e, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114228649437443144, guid: d0ab09dfdb72e614aadbc6e474b9bc3e,
         type: 3}
@@ -1208,6 +1191,7 @@ MonoBehaviour:
   resolution: 2
   FPS: 60
   svoInputFileName: 
+  opencvCalibFile: 
   svoLoopBack: 1
   svoRealTimeMode: 0
   currentFrame: 0
@@ -1233,7 +1217,9 @@ MonoBehaviour:
   objectDetection2DMask: 0
   objectDetectionModel: 0
   bodyFitting: 0
-  personDetectionConfidenceThreshold: 20
+  maxRange: 40
+  SK_personDetectionConfidenceThreshold: 50
+  OD_personDetectionConfidenceThreshold: 35
   vehicleDetectionConfidenceThreshold: 20
   bagDetectionConfidenceThreshold: 20
   animalDetectionConfidenceThreshold: 20
@@ -1428,6 +1414,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4937924797587290, guid: 558a4b76067e3e44089fbed55a2687e6, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937924797587290, guid: 558a4b76067e3e44089fbed55a2687e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1440,6 +1430,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4937924797587290, guid: 558a4b76067e3e44089fbed55a2687e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937924797587290, guid: 558a4b76067e3e44089fbed55a2687e6, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -1450,14 +1444,6 @@ PrefabInstance:
     - target: {fileID: 4937924797587290, guid: 558a4b76067e3e44089fbed55a2687e6, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4937924797587290, guid: 558a4b76067e3e44089fbed55a2687e6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4937924797587290, guid: 558a4b76067e3e44089fbed55a2687e6, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114191359626448276, guid: 558a4b76067e3e44089fbed55a2687e6,
         type: 3}
@@ -1495,8 +1481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 133b3bfe60baacd45a72714ffc6eb29a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: -1
-  useLegacySteamVRInput: 0
   deviceToTrack: 1
   latencyCompensation: 78
   correctControllerDrift: 1
@@ -1760,6 +1744,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4723432349376882, guid: 7a5f9c3559310d741bc7b70ccea08ada, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723432349376882, guid: 7a5f9c3559310d741bc7b70ccea08ada, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02451834
       objectReference: {fileID: 0}
@@ -1772,6 +1760,10 @@ PrefabInstance:
       value: 0.11855292
       objectReference: {fileID: 0}
     - target: {fileID: 4723432349376882, guid: 7a5f9c3559310d741bc7b70ccea08ada, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723432349376882, guid: 7a5f9c3559310d741bc7b70ccea08ada, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -1781,14 +1773,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4723432349376882, guid: 7a5f9c3559310d741bc7b70ccea08ada, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4723432349376882, guid: 7a5f9c3559310d741bc7b70ccea08ada, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4723432349376882, guid: 7a5f9c3559310d741bc7b70ccea08ada, type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
